@@ -48,6 +48,7 @@ android {
 
 dependencies {
 
+    implementation(project(":core-model"))
     val compose_version: String by project
 
     implementation("androidx.core:core-ktx:1.7.0")
@@ -62,4 +63,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$compose_version")
     debugImplementation("androidx.compose.ui:ui-tooling:$compose_version")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$compose_version")
+
+    val room_version = "2.4.3"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+
 }
