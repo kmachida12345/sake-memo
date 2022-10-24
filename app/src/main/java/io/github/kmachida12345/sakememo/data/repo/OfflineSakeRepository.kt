@@ -6,8 +6,9 @@ import io.github.kmachida12345.sakememo.database.model.SakeEntity
 import io.github.kmachida12345.sakememo.database.model.asExternalModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class OfflineSakeRepository(
+class OfflineSakeRepository @Inject constructor(
     private val sakeDao: SakeDao
 ) : SakeRepository {
     override fun getSakesStream(): Flow<List<Sake>> {
